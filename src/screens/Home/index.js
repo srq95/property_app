@@ -11,8 +11,7 @@ import {
   TextInput,
   ScrollView,
 } from 'react-native';
-import {Button, LoginAs} from '../../components';
-import {colors, IMG_StartUP, LogoLight, styleFile} from '../../res';
+import {colors, LogoWhite, styleFile} from '../../res';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -25,18 +24,16 @@ const Home = ({navigation}) => {
         backgroundColor="transparent"
         translucent
       />
-      <ImageBackground
-        source={IMG_StartUP}
-        style={[styleFile.startUpImage, styles.startUpImage]}>
-        <Image source={LogoLight} style={styleFile.logo} />
-        <Text style={[styleFile.heading, styles.heading]}>Create Account</Text>
-      </ImageBackground>
+      <View style={[styleFile.startUpImage, styles.startUpImage]}>
+        <Image source={LogoWhite} style={styleFile.logo} />
+        <View>
+          
+        </View>
+      </View>
       <View style={[styleFile.lowerContainer, styles.lowerContainer]}>
         <ScrollView
           showsVerticalScrollIndicator={false}
-          style={styles.lowerContainerScroll}>
-
-        </ScrollView>
+          style={styles.lowerContainerScroll}></ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -47,12 +44,13 @@ export default Home;
 const styles = StyleSheet.create({
   startUpImage: {
     height: 250,
+    backgroundColor: colors.primary,
   },
   heading: {
     color: colors.white,
     marginTop: 55,
   },
   lowerContainerScroll: {
-    height: windowHeight - 470,
+    height: windowHeight - 270,
   },
 });
